@@ -1,6 +1,3 @@
-### Hyperledger Fabric
+### Fabric
 
-
-### 网络搭建
-
-[Hyperledger Fabric区块链网络的几种部署方案](pages/network.html).
+基于Hyperledger Fabric的学习文档和工具包。
