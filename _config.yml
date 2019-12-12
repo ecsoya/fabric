@@ -5,4 +5,7 @@ description: Hyperledger Fabric Tools & Doc
 
 logo: img/camel.png
 
-is_user_page: true
+github:
+   is_user_page: true
+   
+show_downloads: false
