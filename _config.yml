@@ -8,4 +8,4 @@ logo: img/camel.png
 github:
    is_user_page: true
    
-show_downloads: true
+show_downloads: false
