@@ -1,6 +1,8 @@
 theme: jekyll-theme-minimal
 
-title: Hyperledger Fabric
+title: Fabric
 description: Hyperledger Fabric Tools & Doc
 
 logo: img/camel.png
+
+is_user_page: true
