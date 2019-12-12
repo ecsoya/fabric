@@ -14,19 +14,38 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
-        
-        <img src="{{site.logo | relative_url}}" alt="Logo" />
+			<h1>
+				<a href="http://ecsoya.github.io">Ecsoya's </a> Fabric
+			</h1>
 
-        <p>{{ site.description | default: site.github.project_tagline }}</p>
+			<p>
+				<img src="img/toutiao_qrcode.jpeg" width="150px" height="150px">
+			</p>
+			<p>
+				<img src="img/angryred.jpg" width="16" height="16"> <a
+					href="https://www.toutiao.com/c/user/4212741055/#mid=1602850500081668">@AngryRED</a>
+			
+			<p>
+				<img src="img/email.png" width="16" height="16"> <a
+					href="mailto:jin.liu@soyatec.com">jin.liu@soyatec.com</a>
+			</p>
+			<p>
+				<img src="img/GitHub-Mark-32px.png" width="16" height="16">
+				<a href="https://github.com/ecsoya">https://github.com/ecsoya</a>
+			</p>
+			<div>
+				<h5>工具及文档</h5>
+				<ul>
+					<li><a
+						href="https://ecsoya.github.io/fabric/pages/network.html">Fabric网络搭建</a></li>
+					<li><a
+						href="https://ecsoya.github.io/fabric/pages/gateway.html">Fabric网关服务</a></li>
+					<li><a
+						href="https://ecsoya.github.io/fabric/pages/explorer.html">Spring区块链浏览器</a></li>
+				</ul>
+			</div>
 
-        <ul>
-			<li>Fabric网络搭建</li>
-			<li>Fabric网关服务</li>
-			<li>Spring区块链浏览器</li>
-		</ul>
-
-      </header>
+		</header>
       <section>
 
       {{ content }}
