@@ -24,7 +24,7 @@ Spring Fabric Explore 是基于 [Spring Fabric Gateway](https://ecsoya.github.io
 <dependency>
 	<groupId>io.github.ecsoya</groupId>
 	<artifactId>fabric-explorer-spring-boot-starter</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 </dependency>
 ```
 
@@ -55,6 +55,7 @@ spring:
          logo: img/logo.png
          copyright: Ecsoya (jin.liu@soyatec.com)
          hyperledger-explorer-url: http://www.hyperleder.org
+         path: /explorer
 ```
 
 ### 三、参数配置
@@ -65,10 +66,11 @@ spring:
 |spring.fabric.explorer.logo|图标|否|![图标](https://ecsoya.github.io/fabric/img/camel.png)|
 |spring.fabric.explorer.copyright|版权信息文章|否|Ecsoya (jin.liu@soyatec.com)|
 |spring.fabric.explorer.hyperledger-explorer-url|标准的Hyperledger Explorer地址|否|无|
+|spring.fabric.explorer.path|浏览器的根目录|否|/explorer|
 
 ### 四、支持语言
 
-现在支持英语和中文两种，使用了SpringBoot默认的语言处理方式。
+现在支持**英文**和**中文**两种，使用了SpringBoot默认的语言处理方式。
 
 如需切换语言，请在`application.yml`中配置：
 

@@ -39,7 +39,7 @@ Fabric网络的搭建有很多方式，许多云商都有自己的Fabric BAAS平
 <dependency>
 	<groupId>io.github.ecsoya</groupId>
 	<artifactId>fabric-explorer-spring-boot-starter</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 </dependency>
 ```
 
@@ -50,6 +50,10 @@ Fabric网络的搭建有很多方式，许多云商都有自己的Fabric BAAS平
 所谓的配置文件，就是将所有的组织、Peer和其相关的证书，全部配置到一个JSON文件或YAML文件中，方便在项目中读取。
 
 详细文档：[Fabric Network Config](https://ecsoya.github.io/fabric/pages/network-config.html)
+
+### 六、完整示例
+
+[https://github.com/ecsoya/fabric-demo](https://github.com/ecsoya/fabric-demo)
 
 * * *
 
