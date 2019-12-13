@@ -4,15 +4,15 @@ layout: default
 
 ## Spring Fabric Gateway
 
-Spring Fabric Gateway 是基于Hyperledger官方的[fabric-gateway-java](https://github.com/hyperledger/fabric-gateway-java)工具的拓展。主要功能是将Chaincode（链码）的函数调用，通过Spring MVC的方式进行封装，简化使用。
+Spring Fabric Gateway 是基于Hyperledger官方的[Hyperledger Fabric Gateway SDK for Java](https://github.com/hyperledger/fabric-gateway-java)工具的拓展。主要功能是将Chaincode（链码）的函数调用，通过Spring MVC的方式进行封装，简化使用。
 
-### 前提条件
+### 一、前提条件
 
 1. Hyperledger Fabric网络1.4及以上。（必须）
 2. CouchDB，部分查询需要CouchDB支持。（非必须）
 3. 安装通用链码（Common Chaincode），否则部分服务不可用。（非必须）
 
-### 使用方法
+### 二、使用方法
 
 第一步： 加载`fabric-gateway-spring-boot-starter`
 
@@ -52,7 +52,7 @@ spring:
  * 如果未安装通用链码，可以使用`IFabricInfoService`进行Fabric网络基本信息的查询操作，也可以基于`FabricContext`实现数据的读写操作。
  * 如果安装了通用链码，可以直接调用`IFabricService`服务进行数据的CRUD操作。
 
-### 配置参数介绍
+### 三、配置参数介绍
 
 | 参数          | 说明               | 是否必需 | 默认值 |
 |:-------------|:-------------------|:------|:--------|
@@ -68,7 +68,7 @@ spring:
 |spring.fabric.network.file|Fabric网络配置文件路径|是|无|
 |spring.fabric.network.name|Fabric网络名称，用于Fabric网络基本信息查询|是|无|
 
-### 通用链码
+### 四、通用链码
 
 通用链码是一个集合了CRUD的链码，由于使用了结合`id`和`type`的`CompositeKey`，可以在很大程度上实现基于Id和类型的数据的CRUD操作。
 
@@ -498,7 +498,7 @@ func main() {
 
 ##### 链码函数及参数说明
 
-| 函数            | 函数调用时所使用的**参数** | 说明      |
+| 函数            | 参数 | 说明      |
 | :-------------- | :-------------------  | :-------- |
 | create | 1. `key` (唯一标识，必需)<br>2. `type`（数据类型，必需）| **创建**。 |
 | get | 1. `key` (唯一标识，必需)<br>2. `type`（数据类型，必需）| **读取**。获取单个记录。 |
@@ -525,13 +525,311 @@ CompositeKey其实很好理解，就是将几个变量拼成一个特定的类�
 
 在此通用链码中，便使用了CompositeKey的概念，将数据的Key和Type组合成了唯一的ID，然后进行操作，在很大程度上重用了链码的功能。
 
-### FabricContext 介绍
+### 五、FabricContext 介绍
 
-### IFabricInfoService介绍
+FabricContext是对[Hyperledger Fabric Gateway SDK for Java](https://github.com/hyperledger/fabric-gateway-java)中的`Gateway`的包装，并提供了通用的读写操作方法。
 
-### IFabricService介绍
+[Hyperledger Fabric Gateway SDK for Java](https://github.com/hyperledger/fabric-gateway-java)的示例如下：
 
+```
+package org.example;
 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.concurrent.TimeoutException;
+
+import org.hyperledger.fabric.gateway.Contract;
+import org.hyperledger.fabric.gateway.ContractException;
+import org.hyperledger.fabric.gateway.Gateway;
+import org.hyperledger.fabric.gateway.Network;
+
+public final class Sample {
+    public static void main(String[] args) throws IOException {
+
+        // Load an existing wallet holding identities used to access the network.
+        Path walletDirectory = Paths.get("wallet");
+        Wallet wallet = Wallets.newFileSystemWallet(walletDirectory);
+
+        // Path to a common connection profile describing the network.
+        Path networkConfigFile = Paths.get("connection.json");
+
+        // Configure the gateway connection used to access the network.
+        Gateway.Builder builder = Gateway.createBuilder()
+                .identity(wallet, "user1")
+                .networkConfig(networkConfigFile);
+
+        // Create a gateway connection
+        try (Gateway gateway = builder.connect()) {
+
+            // Obtain a smart contract deployed on the network.
+            Network network = gateway.getNetwork("mychannel");
+            Contract contract = network.getContract("fabcar");
+
+            // Submit transactions that store state to the ledger.
+            byte[] createCarResult = contract.submitTransaction("createCar", "CAR10", "VW", "Polo", "Grey", "Mary");
+            System.out.println(new String(createCarResult, StandardCharsets.UTF_8));
+
+            // Evaluate transactions that query state from the ledger.
+            byte[] queryAllCarsResult = contract.evaluateTransaction("queryAllCars");
+            System.out.println(new String(queryAllCarsResult, StandardCharsets.UTF_8));
+
+        } catch (ContractException | TimeoutException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+调用FabricContext的示例如下：
+
+```
+	public FabricResponse execute(FabricRequest request) {
+		try {
+			logger.debug("Fabric execute " + request.function + " ==>");
+			FabricResponse response = fabricContext.execute(request);
+			if (response.isOk()) {
+				logger.debug("Fabric execute " + request.function + " <== OK");
+			} else {
+				logger.debug("Fabric execute " + request.function + " <== FAILED, " + response.errorMsg);
+			}
+			return response;
+		} catch (Exception e) {
+			logger.error("Fabric execute " + request.function + " <==", e);
+			return FabricResponse.fail(e.getMessage());
+		}
+	}
+```
+
+##### 关键信息梳理
+
+不论是哪种调用方式，关键的信息有以下几点：
+
+1. 用于初始化Fabric网络的**配置文件**，参考SDK中的`NetworkConfig`及项目[Fabric Network Builder](https://github.com/ecsoya/fabric-network-builder)。
+2. 用于加载Wallet的**identify**。
+3. 用于创建网络连接的**通道名称**（channel）。
+4. 用于操作链码Chaincode的**链码名称**。
+5. 用于读写操作的链码Chaincode中的**函数名**及**参数**。
+
+##### 关于Request和Response
+
+FabricRequest只是将函数名和参数做了简单的封装。
+
+```
+package io.github.ecsoya.fabric;
+
+public class FabricRequest {
+
+	public String function;
+	public String[] arguments;
+
+	public FabricRequest(String function, String... arguments) {
+		this.function = function;
+		this.arguments = arguments;
+	}
+
+	public void checkValidate() throws FabricException {
+		if (function == null || function.equals("")) {
+			throw new FabricException("The executable function name is empty.");
+		}
+	}
+}
+```
+
+FabricResponse也只是对返回结果做了简单的封装。
+
+```
+package io.github.ecsoya.fabric;
+
+import org.hyperledger.fabric.sdk.BlockEvent.TransactionEvent;
+
+public class FabricResponse {
+
+	public static final int SUCCESS = 1;
+	public static final int FAILURE = -505;
+
+	public final int status;
+
+	public final String errorMsg;
+
+	private String transactionId;
+
+	public FabricResponse(int status, String errorMsg) {
+		this.status = status;
+		this.errorMsg = errorMsg;
+	}
+
+	public boolean isOk() {
+		return status == SUCCESS;
+	}
+
+	public boolean isOk(boolean all) {
+		return isOk();
+	}
+
+	public FabricResponse setTransactionId(String transactionId) {
+		this.transactionId = transactionId;
+		return this;
+	}
+
+	public String getTransactionId() {
+		return transactionId;
+	}
+
+	public static FabricResponse fail(String errorMsg) {
+		return new FabricResponse(FAILURE, errorMsg);
+	}
+
+	public static FabricResponse ok() {
+		return new FabricResponse(SUCCESS, null);
+	}
+
+	public static FabricResponse create(TransactionEvent event) {
+		if (event == null) {
+			return fail("Invalid transaction event");
+		}
+		FabricResponse res = new FabricResponse(SUCCESS, null);
+		res.setTransactionId(event.getTransactionID());
+		return res;
+	}
+
+}
+
+```
+
+有兴趣的朋友可以了解一下`FabricQueryRequest`、`FabricQueryResponse`、`FabricQuery`和`FabricPagination`的实现。
+
+### 六、IFabricInfoService
+
+此服务提供了Fabric 区块链网络基本信息查询，包含区块链信息，区块信息，交易信息等。
+
+```
+package io.github.ecsoya.fabric.service;
+
+import java.util.List;
+
+import io.github.ecsoya.fabric.FabricPagination;
+import io.github.ecsoya.fabric.FabricPaginationQuery;
+import io.github.ecsoya.fabric.FabricQueryResponse;
+import io.github.ecsoya.fabric.bean.FabricBlock;
+import io.github.ecsoya.fabric.bean.FabricHistory;
+import io.github.ecsoya.fabric.bean.FabricLedger;
+import io.github.ecsoya.fabric.bean.FabricTransaction;
+import io.github.ecsoya.fabric.bean.FabricTransactionRWSet;
+
+/**
+ * Default service to provided fabric blockchain info, such as blocks,
+ * transactions and ledger.
+ * 
+ * @author ecsoya
+ *
+ */
+public interface IFabricInfoService {
+
+	/**
+	 * Query Fabric Info.
+	 */
+	FabricQueryResponse<FabricLedger> queryFabricLedger();
+
+	/**
+	 * Query fabric block by using block number.
+	 */
+	FabricQueryResponse<FabricBlock> queryBlockByNumber(long blockNumber);
+
+	/**
+	 * Query fabric block by using transaction id.
+	 */
+	FabricQueryResponse<FabricBlock> queryBlockByTransactionID(String txId);
+
+	/**
+	 * Query fabric block by using block hash.
+	 */
+	FabricQueryResponse<FabricBlock> queryBlockByHash(byte[] blockHash);
+
+	/**
+	 * Paging query fabric blocks.
+	 * 
+	 */
+	FabricPagination<FabricBlock> queryBlocks(FabricPaginationQuery<FabricBlock> query);
+
+	/**
+	 * Query all transactions of a block number.
+	 */
+	FabricQueryResponse<List<FabricTransaction>> queryTransactions(long blockNumber);
+
+	/**
+	 * Query transaction reads and writes of a transaction id.
+	 */
+	FabricQueryResponse<FabricTransactionRWSet> queryTransactionRWSet(String txId);
+
+	/**
+	 * Query history of object with given key and type.
+	 */
+	FabricQueryResponse<List<FabricHistory>> queryHistory(String type, String key);
+
+	/**
+	 * Query transaction with id.
+	 */
+	FabricQueryResponse<FabricTransaction> queryTransaction(String txid);
+}
+
+```
+
+### 七、IFabricService
+
+此服务是基于[通用链码](https://github.com/ecsoya/spring-fabric-gateway/raw/master/spring-fabric-gateway/src/chaincode/common/chaincode.go)和通用API（FabricObject）的CRUD实现。
+
+FabricObject是一个简单的通用Bean，只有`id`、`type`和`values`三个属性。
+
+```
+package io.github.ecsoya.fabric.bean;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import lombok.Data;
+
+/**
+ * Common fabric object bean.
+ * 
+ * Using the CompositeKey with the id and type to identify a specific object.
+ * 
+ * @author ecsoya
+ *
+ */
+@Data
+public class FabricObject implements IFabricObject {
+
+	private String id;
+
+	private String type;
+
+	private List<FabricQueryHistory> queryHistories;
+
+	private Map<String, Object> values;
+
+	@Override
+	public String getType() {
+		return type;
+	}
+
+	public void put(String key, Object value) {
+		if (values == null) {
+			values = new HashMap<String, Object>();
+		}
+		values.put(key, value);
+	}
+}
+
+```
+
+最终，将会以JSON的形式存储到Fabric区块链网络中。
+
+### 八、服务扩展
+
+可参考`IFabricBaseService`、`IFabricBlockService`、`IChaincodeService`等的实现。
 
 * * *
 
