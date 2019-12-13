@@ -6,14 +6,17 @@ layout: default
 
 Spring Fabric Explore 是基于 [Spring Fabric Gateway](https://ecsoya.github.io/fabric/pages/gateway.html)开发的简化版的Fabric区块链浏览器。
 
-### 预览
+### 一、预览
 
 ![首页](https://ecsoya.github.io/fabric/img/explorer-1.png)
+
 ![区块信息](https://ecsoya.github.io/fabric/img/explorer-2.png)
+
 ![交易信息](https://ecsoya.github.io/fabric/img/explorer-3.png)
+
 ![历史记录](https://ecsoya.github.io/fabric/img/explorer-4.png)
 
-### 实现方法
+### 二、实现方法
 
 第一步：加载`fabric-explorer-spring-boot-starter`：
 
@@ -53,6 +56,15 @@ spring:
          copyright: Ecsoya (jin.liu@soyatec.com)
          hyperledger-explorer-url: http://www.hyperleder.org
 ```
+
+### 三、参数配置
+
+| 参数          | 说明               | 是否必需 | 默认值 |
+|:-------------|:-------------------|:------|:--------|
+|spring.fabric.explorer.title|大标题|否|Spring Fabric Explorer|
+|spring.fabric.explorer.logo|图标|否|![图标](https://ecsoya.github.io/fabric/img/camel.png)|
+|spring.fabric.explorer.copyright|版权信息文章|否|Ecsoya (jin.liu@soyatec.com)|
+|spring.fabric.explorer.hyperledger-explorer-url|标准的Hyperledger Explorer地址|否|无|
 
 * * * 
 
