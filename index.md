@@ -40,4 +40,4 @@ Fabric网络的搭建有很多方式，许多云商都有自己的Fabric BAAS平
 
 * * *
 
-[更多](http://ecsoya.github.io)
+[更多文章](http://ecsoya.github.io)
