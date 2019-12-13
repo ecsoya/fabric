@@ -500,9 +500,9 @@ func main() {
 
 | 函数          | 参数               | 说明 |
 |:-------------|:-------------------|:--------|
-|create|<ul> <li>`key` (唯一标识，必需)</li> <li> `type`（数据类型，必需）</li></ul>|创建。|
-|get|1. `key` (唯一标识，必需)   2. `type`（数据类型，必需）|读取。获取单个记录。|
-|update|1. `key` (唯一标识，必需)   2. `type`（数据类型，必需）|更新。|
+|create|1. `key` (唯一标识，必需)\2. `type`（数据类型，必需）|创建。|
+|get|1. `key` (唯一标识，必需)<br>2. `type`（数据类型，必需）|读取。获取单个记录。|
+|update|1. `key` (唯一标识，必需)&nbsp;2. `type`（数据类型，必需）|更新。|
 |delete|1. `key` (唯一标识，必需)   2. `type`（数据类型，必需）|删除。|
 |list|无|查询所有的数据，不建议使用，仅供开发时少量数据的测试。|
 |query|1. `selector` (CouchDB的JSON查询字符串，必需)  2. `pageSize` (分页查询页面大小， 非必需)  3. `bookmark` (分页查询定位符，非必需)|查询。第一个变量为必需，而且必需是使用了CouchDB的Fabric网络才有用。关于CouchDB的selector，请参考官方文档[CouchDB](http://docs.couchdb.org/en/stable/api/database/find.html?highlight=find#post--db-_find)。如果需要实现分页查询，则必需添加后面2个变量。|
