@@ -494,8 +494,42 @@ func main() {
 
 ```
 
+[下载](https://github.com/ecsoya/spring-fabric-gateway/raw/master/spring-fabric-gateway/src/chaincode/common/chaincode.go)此链码
 
-### 
+##### 链码函数及参数说明
+
+| 函数          | 参数               | 说明 |
+|:-------------|:-------------------|:--------|
+|create|1. key (唯一标识，必需) 2. type（数据类型，必需）|创建。|
+|get|1. key (唯一标识，必需) 2. type（数据类型，必需）|读取。获取单个记录。|
+|update|1. key (唯一标识，必需) 2. type（数据类型，必需）|更新。|
+|delete|1. key (唯一标识，必需) 2. type（数据类型，必需）|删除。|
+|list|无|查询所有的数据，不建议使用，仅供开发时少量数据的测试。|
+|query|1. selector (CouchDB的JSON查询字符串，必需) 2. pageSize (分页查询页面大小， 非必需) 3. bookmark (分页查询定位符，非必需)|查询。第一个变量为必需，而且必需是使用了CouchDB的Fabric网络才有用。关于CouchDB的selector，请参考官方文档[CouchDB](http://docs.couchdb.org/en/stable/api/database/find.html?highlight=find#post--db-_find)。如果需要实现分页查询，则必需添加后面2个变量。|
+|count|1. selector (CouchDB的JSON查询字符串，必需)|数量统计。必需是使用了CouchDB的Fabric网络才有用。关于CouchDB的selector，请参考官方文档[CouchDB](http://docs.couchdb.org/en/stable/api/database/find.html?highlight=find#post--db-_find)|
+|exists|1. selector (CouchDB的JSON查询字符串，必需)|是否存在。必需是使用了CouchDB的Fabric网络才有用。关于CouchDB的selector，请参考官方文档[CouchDB](http://docs.couchdb.org/en/stable/api/database/find.html?highlight=find#post--db-_find)|
+|history|1. key (唯一标识，必需) 2. type（数据类型，必需）|查询数据的历史记录，由于区块链的特殊性，所有的数据的添加、修改、删除都有历史记录，即便是删除，也会在区块链上留下痕迹。此方法会返回某个类型的数据的所有修改记录，包含交易id，修改时间等信息。|
+
+##### 关于CompositeKey
+
+```
+// CreateCompositeKey combines the given `attributes` to form a composite
+// key. The objectType and attributes are expected to have only valid utf8
+// strings and should not contain U+0000 (nil byte) and U+10FFFF
+// (biggest and unallocated code point).
+// The resulting composite key can be used as the key in PutState().
+CreateCompositeKey(objectType string, attributes []string) (string, error)
+```
+
+CompositeKey起始很好理解，就是将几个变量拼成一个特定的类型的ID，然后使用，只不过在进行查询的时候也要进行区别对待。
+
+在此通用链码中，便使用了CompositeKey的概念，将数据的Key和Type组合成了唯一的ID，然后进行操作，在很大程度上重用了链码的功能。
+
+### FabricContext 介绍
+
+### IFabricInfoService介绍
+
+### IFabricService介绍
 
 
 
