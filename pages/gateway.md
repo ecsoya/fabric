@@ -835,7 +835,7 @@ public class FabricObject implements IFabricObject {
 
 1. [Hyperledger Fabric Gateway SDK for Java](https://github.com/hyperledger/fabric-gateway-java)
 2. [Java SDK for Hyperledger Fabric](https://github.com/hyperledger/fabric-sdk-java)
-3. [Fabric 网络搭建](https://ecsoya.github.io/fabric/pages/network.html)
+3. [Fabric 网络部署](https://ecsoya.github.io/fabric/pages/network.html)
 4. [Fabric Network Config](https://ecsoya.github.io/fabric/pages/network-config.html)
 
 * * *

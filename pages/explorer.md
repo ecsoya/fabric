@@ -81,7 +81,7 @@ spring:
 
 ### 五、参考
 
-1. [Fabric 网络搭建](https://ecsoya.github.io/fabric/pages/network.html)
+1. [Fabric 网络部署](https://ecsoya.github.io/fabric/pages/network.html)
 2. [Spring Fabric Gateway](https://ecsoya.github.io/fabric/pages/gateway.html)
 3. [Fabric Network Config](https://ecsoya.github.io/fabric/pages/network-config.html)
 4. [Hyperledger Explorer](https://www.hyperledger.org/projects/explorer)

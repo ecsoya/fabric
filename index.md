@@ -30,13 +30,13 @@ Fabric网络的搭建有很多方式，许多云商都有自己的Fabric BAAS平
 </dependency>
 ```
 
-### 四、Fabric Network Builder
+### 四、Fabric Network Config
 
-以上的项目，包含官方的`fabric-gateway-java`，都离不开 Fabric Network 配置文件的支持。
+以上的项目，包含官方的`fabric-gateway-java`，都离不开 Fabric Network Config 文件的支持。
 
 所谓的配置文件，就是将所有的组织、Peer和其相关的证书，全部配置到一个JSON文件或YAML文件中，方便在项目中读取。
 
-参考项目[fabric-network-builder](https://github.com/ecsoya/fabric-network-builder)，即可轻松的生成Fabric网络配置的YAML文件。
+参考文章[Fabric Network Config](https://ecsoya.github.io/fabric/pages/network-config.html)，即可轻松的生成Fabric网络配置的YAML文件。
 
 * * *
 
