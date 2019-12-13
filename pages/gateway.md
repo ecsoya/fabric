@@ -494,13 +494,13 @@ func main() {
 
 ```
 
-[下载](https://github.com/ecsoya/spring-fabric-gateway/raw/master/spring-fabric-gateway/src/chaincode/common/chaincode.go)此链码
+下载此[链码](https://github.com/ecsoya/spring-fabric-gateway/raw/master/spring-fabric-gateway/src/chaincode/common/chaincode.go)
 
 ##### 链码函数及参数说明
 
 | 函数          | 参数               | 说明 |
 |:-------------|:-------------------|:--------|
-|create|1. `key` (唯一标识，必需)   2. `type`（数据类型，必需）|创建。|
+|create|<ul> <li>`key` (唯一标识，必需)</li> <li> `type`（数据类型，必需）</li></ul>|创建。|
 |get|1. `key` (唯一标识，必需)   2. `type`（数据类型，必需）|读取。获取单个记录。|
 |update|1. `key` (唯一标识，必需)   2. `type`（数据类型，必需）|更新。|
 |delete|1. `key` (唯一标识，必需)   2. `type`（数据类型，必需）|删除。|
@@ -521,7 +521,7 @@ func main() {
 CreateCompositeKey(objectType string, attributes []string) (string, error)
 ```
 
-CompositeKey起始很好理解，就是将几个变量拼成一个特定的类型的ID，然后使用，只不过在进行查询的时候也要进行区别对待。
+CompositeKey其实很好理解，就是将几个变量拼成一个特定的类型的ID，然后使用，只不过在进行查询的时候也要进行区别对待。
 
 在此通用链码中，便使用了CompositeKey的概念，将数据的Key和Type组合成了唯一的ID，然后进行操作，在很大程度上重用了链码的功能。
 
