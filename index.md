@@ -4,7 +4,7 @@ Hyperledger Fabric 是 Hyperledger 超级账本项目的基石。它是基于许
 
 ### 一、网络部署
 
-Fabric网络的搭建有很多方式，许多云商都有自己的Fabric BAAS平台，可以直接选择。也可以自己动手搭建，详细的方法请参考[Fabric 网络部署](pages/network.html).
+Fabric网络的搭建有很多方式，许多云商都有自己的Fabric BAAS平台，可以直接选择。也可以自己动手搭建，详细的方法请参考[Fabric 网络部署](pages/network.html)。
 
 ### 二、官方SDK
 
@@ -17,7 +17,7 @@ Fabric网络的搭建有很多方式，许多云商都有自己的Fabric BAAS平
 
 1. 项目地址：[spring-fabric-gateway](https://github.com/ecsoya/spring-fabric-gateway)
 2. 详细文档：[Spring Fabric Gateway](pages/gateway.html)
-3. Maven地址
+3. Maven地址：
 
 ```
 <dependency>
@@ -33,7 +33,7 @@ Fabric网络的搭建有很多方式，许多云商都有自己的Fabric BAAS平
 
 1. 项目地址：[spring-fabric-gateway](https://github.com/ecsoya/spring-fabric-gateway)
 2. 详细文档：[Spring Fabric Explorer](pages/explorer.html)
-3. Maven地址
+3. Maven地址：
 
 ```
 <dependency>
@@ -45,7 +45,7 @@ Fabric网络的搭建有很多方式，许多云商都有自己的Fabric BAAS平
 
 ### 五、Fabric Network Config
 
-以上的项目，包含官方的`fabric-gateway-java`，都离不开 Fabric Network Config 文件的支持。
+以上的项目，包含官方的[Hyperledger Fabric Gateway SDK for Java](https://github.com/hyperledger/fabric-gateway-java)，都离不开 Fabric Network Config 文件的支持。
 
 所谓的配置文件，就是将所有的组织、Peer和其相关的证书，全部配置到一个JSON文件或YAML文件中，方便在项目中读取。
 
