@@ -498,7 +498,7 @@ func main() {
 
 ##### 链码函数及参数说明
 
-| 函数&nbsp;             | 参数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 说明&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       |
+| 函数;             | 函数调用时所使用的**参数**; | 说明&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       |
 | :-------------- | :-------------------  | :-------- |
 | create | 1. `key` (唯一标识，必需)<br>2. `type`（数据类型，必需）| **创建**。 |
 | get | 1. `key` (唯一标识，必需)<br>2. `type`（数据类型，必需）| **读取**。获取单个记录。 |
