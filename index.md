@@ -1,4 +1,4 @@
-# Hyperledger Fabric
+# 简介
 
 Hyperledger Fabric 是 Hyperledger 超级账本项目的基石。它是基于许可的区块链，或者更准确地说是一种分布式分类帐技术（DLT），该技术最初由 IBM 公司和 Digital Asset 创建，它更适合企业和联盟去打造区块链即服务的BAAS平台。
 
