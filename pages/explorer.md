@@ -66,6 +66,26 @@ spring:
 |spring.fabric.explorer.copyright|版权信息文章|否|Ecsoya (jin.liu@soyatec.com)|
 |spring.fabric.explorer.hyperledger-explorer-url|标准的Hyperledger Explorer地址|否|无|
 
+### 四、支持语言
+
+现在支持英语和中文两种，使用了SpringBoot默认的语言处理方式。
+
+如需切换语言，请在`application.yml`中配置：
+
+```
+spring:
+   mvc:
+      locale: zh_CN
+      locale-resolver: fixed
+```
+
+### 五、参考
+
+1. [Fabric 网络搭建](https://ecsoya.github.io/fabric/pages/network.html)
+2. [Spring Fabric Gateway](https://ecsoya.github.io/fabric/pages/gateway.html)
+3. [Fabric Network Config](https://ecsoya.github.io/fabric/pages/network-config.html)
+4. [Hyperledger Explorer](https://www.hyperledger.org/projects/explorer)
+
 * * * 
 
 [首页](http://ecsoya.github.io/fabric)
