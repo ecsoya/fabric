@@ -20,7 +20,7 @@ Spring Fabric Explore 是基于 [Spring Fabric Gateway](https://ecsoya.github.io
 
 第一步：加载`fabric-explorer-spring-boot-starter`：
 
-```
+```xml
 <dependency>
 	<groupId>io.github.ecsoya</groupId>
 	<artifactId>fabric-explorer-spring-boot-starter</artifactId>
@@ -30,7 +30,7 @@ Spring Fabric Explore 是基于 [Spring Fabric Gateway](https://ecsoya.github.io
 
 第二步：配置`application.yml`
 
-```
+```yml
 # Fabric Network Configure      
 spring:         
    fabric:
@@ -87,10 +87,10 @@ spring:
  - Spring Starters：
 	- Web (spring-boot-starter-web)
 	- Thymeleaf (spring-boot-starter-thymeleaf)
- - 静态资源：(_./js/explorer/*_ | _./css/explorer/*_ | _./img/explorer/*_ | _./explorer/*.html_)
-	- [jQuery](http://jquery.org) (_./js/explorer/jquery.min.js_  `v3.4.1`)
-	- [Bootstrap](https://getbootstrap.com/) (_./js/bootstrap.min.js_ | _./css/explorer/bootstrap.min.css_ `v4.3.1`)
-	- [DataTables](https://datatables.net/download) (_./js/explorer/datatables.min.js_ | _./css/explorer/datatables.min.css_ `1.10.20`)
+ - 静态资源：(_ ./js/explorer/* | ./css/explorer/* | ./img/explorer/* | ./explorer/*.html _)
+	- [jQuery](http://jquery.org) (_ ./js/explorer/jquery.min.js _  `v3.4.1`)
+	- [Bootstrap](https://getbootstrap.com/) (_ ./js/explorer/bootstrap.min.js | ./css/explorer/bootstrap.min.css _ `v4.3.1`)
+	- [DataTables](https://datatables.net/download) (_ ./js/explorer/datatables.min.js | ./css/explorer/datatables.min.css _ `1.10.20`)
 
 **注意**：从Spring Fabric Explorer **1.0.4** 开始，所有的静态资源都移动到了 _explorer_ 目录中。如果想要重写，请记得使用正确的路径。 
 

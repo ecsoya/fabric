@@ -13,7 +13,7 @@ layout: default
 
 创建一个Spring Boot Maven工程，并导入`fabric-explorer-spring-boot-starter`相关jar包。
 
-```
+```xml
 <dependency>
 	<groupId>io.github.ecsoya</groupId>
 	<artifactId>fabric-explorer-spring-boot-starter</artifactId>
@@ -25,7 +25,7 @@ layout: default
 
 1- 运行`first-network`文件夹中的`byfn.sh`脚本，此方法为官方的[fabric-samples](https://github.com/hyperledger/fabric-samples.git)中的示例，做了少量修改。
 
-```
+```sh
 ./byfn.sh up -a -s couchdb
 ```
 
@@ -53,7 +53,7 @@ layout: default
 
 ### 四、application.yml配置
 
-```
+```yml
 spring:
    mvc:
       locale: zh_CN

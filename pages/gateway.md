@@ -26,7 +26,7 @@ Spring Fabric Gateway 是基于Hyperledger官方的[Hyperledger Fabric Gateway S
 
 第二步： 修改`application.yml`，配置Fabric网络基础信息。
 
-```
+```yaml
 # Fabric Network Configure      
 spring:         
    fabric:
@@ -75,7 +75,7 @@ spring:
 
 基于性能，此链码使用`go`语言开发。
 
-```
+```go
 /*
  * CommonContract
  */
@@ -532,7 +532,7 @@ FabricContext是对[Hyperledger Fabric Gateway SDK for Java](https://github.com/
 
 [Hyperledger Fabric Gateway SDK for Java](https://github.com/hyperledger/fabric-gateway-java)的示例如下：
 
-```
+```java
 package org.example;
 
 import java.io.IOException;
@@ -585,7 +585,7 @@ public final class Sample {
 
 调用FabricContext的示例如下：
 
-```
+```java
 	public FabricResponse execute(FabricRequest request) {
 		try {
 			logger.debug("Fabric execute " + request.function + " ==>");
@@ -617,7 +617,7 @@ public final class Sample {
 
 FabricRequest只是将函数名和参数做了简单的封装。
 
-```
+```java
 package io.github.ecsoya.fabric;
 
 public class FabricRequest {
@@ -640,7 +640,7 @@ public class FabricRequest {
 
 FabricResponse也只是对返回结果做了简单的封装。
 
-```
+```java
 package io.github.ecsoya.fabric;
 
 import org.hyperledger.fabric.sdk.BlockEvent.TransactionEvent;
@@ -705,7 +705,7 @@ public class FabricResponse {
 
 此服务提供了Fabric 区块链网络基本信息查询，包含区块链信息，区块信息，交易信息等。
 
-```
+```java
 package io.github.ecsoya.fabric.service;
 
 import java.util.List;
@@ -783,7 +783,7 @@ public interface IFabricInfoService {
 
 FabricObject是一个简单的通用Bean，只有`id`、`type`和`values`三个属性。
 
-```
+```java
 package io.github.ecsoya.fabric.bean;
 
 import java.util.HashMap;
