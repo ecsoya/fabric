@@ -87,10 +87,10 @@ spring:
  - Spring Starters：
 	- Web (spring-boot-starter-web)
 	- Thymeleaf (spring-boot-starter-thymeleaf)
- - 静态资源：(_ ./js/explorer/* | ./css/explorer/* | ./img/explorer/* | ./explorer/*.html _)
-	- [jQuery](http://jquery.org) (_ ./js/explorer/jquery.min.js _  `v3.4.1`)
-	- [Bootstrap](https://getbootstrap.com/) (_ ./js/explorer/bootstrap.min.js | ./css/explorer/bootstrap.min.css _ `v4.3.1`)
-	- [DataTables](https://datatables.net/download) (_ ./js/explorer/datatables.min.js | ./css/explorer/datatables.min.css _ `1.10.20`)
+ - 静态资源：(./js/explorer/* | ./css/explorer/* | ./img/explorer/* | ./explorer/*.html)
+	- [jQuery](http://jquery.org) (./js/explorer/jquery.min.js `v3.4.1`)
+	- [Bootstrap](https://getbootstrap.com/) (./js/explorer/bootstrap.min.js | ./css/explorer/bootstrap.min.css  `v4.3.1`)
+	- [DataTables](https://datatables.net/download) (./js/explorer/datatables.min.js | ./css/explorer/datatables.min.css `1.10.20`)
 
 **注意**：从Spring Fabric Explorer **1.0.4** 开始，所有的静态资源都移动到了 _explorer_ 目录中。如果想要重写，请记得使用正确的路径。 
 
