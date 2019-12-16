@@ -17,7 +17,8 @@ Fabric网络的搭建有很多方式，许多云商都有自己的Fabric BAAS平
 
 1. 项目地址：[spring-fabric-gateway](https://github.com/ecsoya/spring-fabric-gateway)
 2. 详细文档：[Spring Fabric Gateway](pages/gateway.html)
-3. Maven地址：
+3. 最新版本：[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.ecsoya/spring-fabric-gateway/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/io.github.ecsoya/spring-fabric-gateway)
+4. Maven地址：
 
 ```
 <dependency>
