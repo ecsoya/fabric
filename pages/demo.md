@@ -100,7 +100,7 @@ spring:
 
 实现基本的CRUD
 
-```
+```java
 package io.github.ecsoya.demo.controller;
 
 import javax.servlet.http.HttpServletRequest;
@@ -169,7 +169,7 @@ Fabric中的分页查询，是通过*bookmark*标记来实现的。
 
 在链码的API中，提供了如下的查询方法：
 
-```
+```go
 APIstub.GetQueryResultWithPagination(query, pageSize, bookmark);
 ```
 
@@ -179,7 +179,7 @@ APIstub.GetQueryResultWithPagination(query, pageSize, bookmark);
 
 以[DataTables](https://datatables.net/download)为例：
 
-```
+```js
 //将页码和bookmark缓存
 let bookmarkMap = new Map();
 
