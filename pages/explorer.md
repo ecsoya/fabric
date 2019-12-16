@@ -93,9 +93,9 @@ spring:
 	- 图片：`/static/img/explorer/(*.png, *.jpg)`
 	- HTML： `/templates/explorer/*.html`
 	- 第三方库：
- 	   - [jQuery](http://jquery.org) (`v3.4.1`)
-	   - [Bootstrap](https://getbootstrap.com/) (`v4.3.1`)
-	   - [DataTables](https://datatables.net/download) (`1.10.20`)
+		- [jQuery](http://jquery.org) (`v3.4.1`)
+	    - [Bootstrap](https://getbootstrap.com/) (`v4.3.1`)
+	    - [DataTables](https://datatables.net/download) (`1.10.20`)
 
 **注意**：从Spring Fabric Explorer **1.0.4** 开始，所有的静态资源都移动到了 _explorer_ 目录中。如果想要重写，请记得使用正确的路径。 
 
