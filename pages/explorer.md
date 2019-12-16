@@ -85,12 +85,17 @@ spring:
 
  - Spring Boot 版本：**2.2.2.RELEASE**
  - Spring Starters：
-	- Web (spring-boot-starter-web)
+    - Web (spring-boot-starter-web)
 	- Thymeleaf (spring-boot-starter-thymeleaf)
- - 静态资源：(./js/explorer/* | ./css/explorer/* | ./img/explorer/* | ./explorer/*.html)
-	- [jQuery](http://jquery.org) (./js/explorer/jquery.min.js `v3.4.1`)
-	- [Bootstrap](https://getbootstrap.com/) (./js/explorer/bootstrap.min.js | ./css/explorer/bootstrap.min.css  `v4.3.1`)
-	- [DataTables](https://datatables.net/download) (./js/explorer/datatables.min.js | ./css/explorer/datatables.min.css `1.10.20`)
+ - 静态资源：
+	- JavaScript：`/static/js/explorer/*.js`
+	- CSS：`/static/css/explorer/*.css`
+	- 图片：`/static/img/explorer/(*.png, *.jpg)`
+	- HTML： `/templates/explorer/*.html`
+ 	- 第三方库
+ 	   - [jQuery](http://jquery.org) (`v3.4.1`)
+	   - [Bootstrap](https://getbootstrap.com/) (`v4.3.1`)
+	   - [DataTables](https://datatables.net/download) (`1.10.20`)
 
 **注意**：从Spring Fabric Explorer **1.0.4** 开始，所有的静态资源都移动到了 _explorer_ 目录中。如果想要重写，请记得使用正确的路径。 
 
