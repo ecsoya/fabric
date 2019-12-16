@@ -60,7 +60,7 @@ spring:
 
 ### 三、参数配置
 
-| 参数          | 说明               | 是否必需 | 默认值 |
+| 参数          | 说明               | 是否必需 | 默认值 | 
 |:-------------|:-------------------|:------|:--------|
 |spring.fabric.explorer.title|大标题|否|Spring Fabric Explorer|
 |spring.fabric.explorer.logo|图标|否|![图标](https://ecsoya.github.io/fabric/img/camel.png)|
@@ -86,12 +86,13 @@ spring:
  - Spring Boot 版本：**2.2.2.RELEASE**
  - Spring Starters：
 	- Web (spring-boot-starter-web)
-	- Thymelead (spring-boot-starter-thymeleaf)
- - 静态资源：
-	- [jQuery](http://jquery.org) (./js/jquery.min.js `v3.4.1`)
-	- [Bootstrap](https://getbootstrap.com/) (./js/bootstrap.min.js `v4.3.1`)
-	- [DataTables](https://datatables.net/download) (./js/datatables.min.js `1.10.20`)
+	- Thymeleaf (spring-boot-starter-thymeleaf)
+ - 静态资源：(_./js/explorer/*_ | _./css/explorer/*_ | _./img/explorer/*_ | _./explorer/*.html_)
+	- [jQuery](http://jquery.org) (_./js/explorer/jquery.min.js_  `v3.4.1`)
+	- [Bootstrap](https://getbootstrap.com/) (_./js/bootstrap.min.js_ | _./css/explorer/bootstrap.min.css_ `v4.3.1`)
+	- [DataTables](https://datatables.net/download) (_./js/explorer/datatables.min.js_ | _./css/explorer/datatables.min.css_ `1.10.20`)
 
+**注意**：从Spring Fabric Explorer **1.0.4** 开始，所有的静态资源都移动到了 _explorer_ 目录中。如果想要重写，请记得使用正确的路径。 
 
 ### 六、参考
 

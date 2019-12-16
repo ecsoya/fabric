@@ -53,7 +53,8 @@ Fabric网络的搭建有很多方式，许多云商都有自己的Fabric BAAS平
 
 ### 六、完整示例
 
-[https://github.com/ecsoya/fabric-demo](https://github.com/ecsoya/fabric-demo)
+1. [文档](https://ecsoya.github.io/fabric/pages/demo.html)
+2. [源码](https://github.com/ecsoya/fabric-demo)
 
 * * *
 

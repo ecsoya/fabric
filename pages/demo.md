@@ -92,7 +92,120 @@ spring:
 
 运行DemoApplication，启动Spring Boot服务，然后在浏览器中输入[http://localhost:8080/explorer](http://localhost:8080/explorer)，查看区块链浏览器。
 
-### 六、通用链码
+### 六、通用链码CRUD
+
+由于此示例中安装了[通用链码](https://github.com/ecsoya/spring-fabric-gateway/raw/master/spring-fabric-gateway/src/chaincode/common/chaincode.go)，所以能够使用[IFabricService](https://ecsoya.github.io/fabric/pages/gateway.html)来创建基于Fabric区块链的CRUD服务。
+
+1- **FabricDemoController** 
+
+实现基本的CRUD
+
+```
+package io.github.ecsoya.demo.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
+import io.github.ecsoya.fabric.FabricPagination;
+import io.github.ecsoya.fabric.FabricPaginationQuery;
+import io.github.ecsoya.fabric.FabricResponse;
+import io.github.ecsoya.fabric.bean.FabricObject;
+import io.github.ecsoya.fabric.service.IFabricService;
+
+@RestController
+public class FabricDemoController {
+
+	@Autowired
+	private IFabricService fabricService;
+
+	@RequestMapping("/")
+	public ModelAndView index(HttpServletRequest request) {
+		ModelAndView modelAndView = new ModelAndView("index");
+		modelAndView.addObject("baseURL", baseUrl(request));
+		return modelAndView;
+	}
+
+	private String baseUrl(HttpServletRequest request) {
+		String scheme = request.getScheme();
+		String serverName = request.getServerName();
+		int port = request.getServerPort();
+		String path = request.getContextPath();
+		return scheme + "://" + serverName + ":" + port + path;
+	}
+
+	@RequestMapping("/list")
+	public FabricPagination<FabricObject> list(FabricPaginationQuery<FabricObject> query) {
+		return fabricService.pagination(query);
+	}
+
+	@RequestMapping("/add")
+	public FabricResponse add(FabricObject object) {
+		return fabricService.create(object);
+	}
+
+	@RequestMapping("/update")
+	public FabricResponse update(FabricObject object) {
+		return fabricService.update(object);
+	}
+
+	@RequestMapping("/remove")
+	public FabricResponse remove(FabricObject object) {
+		return fabricService.delete(object.getId(), object.getType());
+	}
+}
+```
+
+2- 关于**删除**
+
+虽然说区块链是不可篡改的账本，但不是说区块链上的数据就不可删除。其实，Fabric区块链的链码，是支持**删除**操作的，删除之后便不能再被查询。但是，这里的**删除**，并不是物理删除，只是给数据打上了一个**is_delete**的标记，因为所有的操作，都会有对应的交易ID，所以数据即便删除了，仍然在区块链的账本上留下记录。
+
+3- 分页查询
+
+Fabric中的分页查询，是通过*bookmark*标记来实现的。
+
+在链码的API中，提供了如下的查询方法：
+
+```
+APIstub.GetQueryResultWithPagination(query, pageSize, bookmark);
+```
+
+**bookmark**是当前查询之后，返回的一个标记，下一次的查询会从这个标记开始。如果是第一次（第一页）查询，可以使用空字符串（""）代替。
+
+在前段实现时，如果要实现自由切换页码，可以将**页码**和**bookmark**缓存到map中进行调用。
+
+以[DataTables](https://datatables.net/download)为例：
+
+```
+//将页码和bookmark缓存
+let bookmarkMap = new Map();
+
+let dataTable = $('#dataTable')
+	.DataTable(
+		{
+			"ajax" : function(data, callback) {
+			let pageSize = data.length; //每页大小
+			let currentPage = data.start / data.length; //当前页
+			$.ajax({
+				url : baseURL + "/list",
+				data : {
+					bookmark : bookmarkMap[currentPage], //当前页的bookmark值
+					pageSize : pageSize,
+					currentPage : currentPage,
+					type : $('#type').val()
+					}
+				}).then(function success(res) {
+					bookmarkMap[currentPage + 1] = res.bookmark; //将查询结果中的bookmark值，作为下一页的bookmark
+					callback(res); // 调用DataTable的callback函数初始化表。
+				}, function fail(data, status) {
+
+				});
+			},
+			……
+```
 
 ### 参考文档
 
