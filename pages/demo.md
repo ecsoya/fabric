@@ -14,11 +14,11 @@ layout: default
 创建一个Spring Boot Maven工程，并导入`fabric-explorer-spring-boot-starter`相关jar包。
 
 ```
-		<dependency>
-			<groupId>io.github.ecsoya</groupId>
-			<artifactId>fabric-explorer-spring-boot-starter</artifactId>
-			<version>1.0.3</version>
-		</dependency>
+<dependency>
+	<groupId>io.github.ecsoya</groupId>
+	<artifactId>fabric-explorer-spring-boot-starter</artifactId>
+	<version>1.0.4</version>
+</dependency>
 ```
 
 ### 三、Fabric 网络搭建
@@ -91,6 +91,8 @@ spring:
 ### 五、运行
 
 运行DemoApplication，启动Spring Boot服务，然后在浏览器中输入[http://localhost:8080/explorer](http://localhost:8080/explorer)，查看区块链浏览器。
+
+### 六、通用链码
 
 ### 参考文档
 

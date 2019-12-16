@@ -24,7 +24,7 @@ Spring Fabric Explore 是基于 [Spring Fabric Gateway](https://ecsoya.github.io
 <dependency>
 	<groupId>io.github.ecsoya</groupId>
 	<artifactId>fabric-explorer-spring-boot-starter</artifactId>
-	<version>1.0.3</version>
+	<version>1.0.4</version>
 </dependency>
 ```
 
@@ -81,7 +81,19 @@ spring:
       locale-resolver: fixed
 ```
 
-### 五、参考
+### 五、依赖
+
+ - Spring Boot 版本：**2.2.2.RELEASE**
+ - Spring Starters：
+	- Web (spring-boot-starter-web)
+	- Thymelead (spring-boot-starter-thymeleaf)
+ - 静态资源：
+	- [jQuery](http://jquery.org) (./js/jquery.min.js `v3.4.1`)
+	- [Bootstrap](https://getbootstrap.com/) (./js/bootstrap.min.js `v4.3.1`)
+	- [DataTables](https://datatables.net/download) (./js/datatables.min.js `1.10.20`)
+
+
+### 六、参考
 
 1. [Fabric 网络部署](https://ecsoya.github.io/fabric/pages/network.html)
 2. [Spring Fabric Gateway](https://ecsoya.github.io/fabric/pages/gateway.html)

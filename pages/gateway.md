@@ -20,7 +20,7 @@ Spring Fabric Gateway 是基于Hyperledger官方的[Hyperledger Fabric Gateway S
 <dependency>
 	<groupId>io.github.ecsoya</groupId>
 	<artifactId>fabric-gateway-spring-boot-starter</artifactId>
-	<version>1.0.3</version>
+	<version>1.0.4</version>
 </dependency>
 ```
 

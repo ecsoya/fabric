@@ -4,7 +4,7 @@ layout: default
 
 ## Fabric Network Config
 
-Fabric网络配置文件支持JSON和YMAL两种格式，主要用于加载Fabric网络的Client，Peers和证书等信息，具体的加载类为SDK中的
+Fabric网络配置文件支持JSON和YMAL两种格式，主要用于加载Fabric网络的Client，Peers和证书等信息，具体的加载类为[Java SDK for Hyperledger Fabric](https://github.com/hyperledger/fabric-sdk-java)中的
 `org.hyperledger.fabric.sdk.NetworkConfig`。
 
 ### 一、概述
