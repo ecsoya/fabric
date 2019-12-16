@@ -4,7 +4,7 @@ layout: default
 
 ## Spring Fabric Explorer
 
-Spring Fabric Explore 是基于 [Spring Fabric Gateway](https://ecsoya.github.io/fabric/pages/gateway.html)开发的简化版的Fabric区块链浏览器。
+Spring Fabric Explorer 是基于 [Spring Fabric Gateway](https://ecsoya.github.io/fabric/pages/gateway.html)开发的简化版的Fabric区块链浏览器。
 
 ### 一、预览
 
