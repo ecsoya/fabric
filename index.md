@@ -24,7 +24,7 @@ Fabric网络的搭建有很多方式，许多云商都有自己的Fabric BAAS平
 <dependency>
 	<groupId>io.github.ecsoya</groupId>
 	<artifactId>fabric-gateway-spring-boot-starter</artifactId>
-	<version>1.0.4</version>
+	<version>1.0.5</version>
 </dependency>
 ```
 
@@ -40,7 +40,7 @@ Fabric网络的搭建有很多方式，许多云商都有自己的Fabric BAAS平
 <dependency>
 	<groupId>io.github.ecsoya</groupId>
 	<artifactId>fabric-explorer-spring-boot-starter</artifactId>
-	<version>1.0.4</version>
+	<version>1.0.5</version>
 </dependency>
 ```
 
