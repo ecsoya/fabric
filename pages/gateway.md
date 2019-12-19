@@ -64,7 +64,7 @@ spring:
 |spring.fabric.name|Fabric网络名称，用于Fabric网络基本信息查询|否|无|
 |spring.fabric.gateway.wallet.memory|基于内存创建Wallet实例|否|是|
 |spring.fabric.gateway.wallet.file|如果不是基于内存创建Wallet示例，需要指定Wallet的加载目录|否|无|
-|spring.fabric.gateway.wallet.identity|Wallet实例的标识|是|admin|
+|spring.fabric.gateway.wallet.identify|Wallet实例的标识|是|admin|
 |spring.fabric.gateway.commit-timeout|Fabric网络提交超时时间，单位：秒，`1.0.4+`。如果出现执行写操作超时，增加此时间设置，一般就会解决。|否|5秒|
 |spring.fabric.network.file|Fabric网络配置文件路径|是|无|
 |spring.fabric.network.name|Fabric网络名称，用于Fabric网络基本信息查询|是|无|
