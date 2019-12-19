@@ -2,6 +2,8 @@
 
 Hyperledger Fabric 是 Hyperledger 超级账本项目的基石。它是基于许可的区块链，或者更准确地说是一种分布式分类帐技术（DLT），该技术最初由 IBM 公司和 Digital Asset 创建，它更适合企业和联盟去打造区块链即服务的BAAS平台。
 
+Spring Fabric Gateway 是我基于官方的Gateway项目，结合Spring MVC做出的一套框架，这将大大的简化Fabric区块链项目的开发。
+
 ### 一、网络部署
 
 Fabric网络的搭建有很多方式，许多云商都有自己的Fabric BAAS平台，可以直接选择。也可以自己动手搭建，详细的方法请参考[Fabric 网络部署](pages/network.html)。
