@@ -1,53 +1,48 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 {% seo %}
-    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-    <!--[if lt IE 9]>
+<link rel="stylesheet" href="{{ "
+	/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+<!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-			<h1>
-				Fabric 开发手册
-			</h1>
-			<div>
-				<h4>目录</h4>
-				<ul>
-					<li><a href="https://ecsoya.github.io/fabric">首页</a></li>
-					<li><a
-						href="https://ecsoya.github.io/fabric/pages/network.html">Fabric
-							网络部署</a></li>
-					<li><a
-						href="https://ecsoya.github.io/fabric/pages/network-config.html">Fabric
-							Network Config</a></li>
-					<li><a
-						href="https://ecsoya.github.io/fabric/pages/gateway.html">Spring
-							Fabric Gateway</a></li>
-					<li><a
-						href="https://ecsoya.github.io/fabric/pages/explorer.html">Spring
-							Fabric Explorer</a></li>
+</head>
+<body>
+	<div class="wrapper">
+		<header>
+			<h1>Fabric 开发手册</h1>
+			<ul>
+				<li><a href="https://ecsoya.github.io/fabric">首页</a></li>
+				<li><a
+					href="https://ecsoya.github.io/fabric/pages/network.html">Fabric
+						网络部署</a></li>
+				<li><a
+					href="https://ecsoya.github.io/fabric/pages/network-config.html">Fabric
+						Network Config</a></li>
+				<li><a
+					href="https://ecsoya.github.io/fabric/pages/gateway.html">Spring
+						Fabric Gateway</a></li>
+				<li><a
+					href="https://ecsoya.github.io/fabric/pages/explorer.html">Spring
+						Fabric Explorer</a></li>
 
-					<li><a href="https://ecsoya.github.io/fabric/pages/demo.html">示例</a></li>
-				</ul>
-			</div>
+				<li><a href="https://ecsoya.github.io/fabric/pages/demo.html">示例</a></li>
+			</ul>
 
 		</header>
-      <section>
-
-      {{ content }}
-
-      </section>
-      <footer>
-        <p><small><a href="{{ site.github.owner_url }}">{{ site.github.owner_name }} &mdash; jin.liu@soyatec.com</small></p>
-      </footer>
-    </div>
-    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
-  </body>
+		<section>{{ content }}</section>
+		<footer>
+			<p>
+				<small><a href="{{ site.github.owner_url }}">AngryRed
+						&mdash; angryred@163.com</small>
+			</p>
+		</footer>
+	</div>
+	<script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+</body>
 </html>
