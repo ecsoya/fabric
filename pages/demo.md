@@ -4,6 +4,10 @@ layout: default
 
 ## Fabric 完整示例
 
+### 2.0
+
+此demo已更新到Hyperledger Fabric v2.3.0版本
+
 ### 一、简介
 
 1. 源码：[https://github.com/ecsoya/fabric-demo](https://github.com/ecsoya/fabric-demo)
