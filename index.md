@@ -4,7 +4,7 @@ Hyperledger Fabric 是 Hyperledger 超级账本项目的基石。它是基于许
 
 Spring Fabric Gateway 是我基于官方的Gateway项目，结合Spring MVC做出的一套框架，这将大大的简化Fabric区块链项目的开发。
 
-[在线演示](http://106.13.229.136/)
+[在线演示](http://139.155.177.74:8081/)
 
 ### 一、网络部署
 
@@ -28,7 +28,7 @@ Fabric网络的搭建有很多方式，许多云商都有自己的Fabric BAAS平
 <dependency>
 	<groupId>io.github.ecsoya</groupId>
 	<artifactId>fabric-gateway-spring-boot-starter</artifactId>
-	<version>1.0.5</version>
+	<version>${latest_version}</version>
 </dependency>
 ```
 
@@ -44,7 +44,7 @@ Fabric网络的搭建有很多方式，许多云商都有自己的Fabric BAAS平
 <dependency>
 	<groupId>io.github.ecsoya</groupId>
 	<artifactId>fabric-explorer-spring-boot-starter</artifactId>
-	<version>1.0.5</version>
+	<version>${latest_version}</version>
 </dependency>
 ```
 
@@ -60,7 +60,7 @@ Fabric网络的搭建有很多方式，许多云商都有自己的Fabric BAAS平
 
 1. [文档](https://ecsoya.github.io/fabric/pages/demo.html)
 2. [源码](https://github.com/ecsoya/fabric-demo)
-3. [在线演示](http://106.13.229.136/)
+3. [在线演示](http://139.155.177.74:8081/)
 * * *
 
 [更多文章](http://ecsoya.github.io)
