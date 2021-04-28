@@ -2,6 +2,9 @@
 
 # 版本更新
 
+### 2.0.0
+1. 适配Hyperledger Fabric v2.x网络。
+
 ### 1.0.6
 
 1. Wallet配置文件更新：`spring.fabric.gateway.wallet.identify 改为：spring.fabric.gateway.wallet.identity `

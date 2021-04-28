@@ -4,9 +4,10 @@ layout: default
 
 ## Fabric 完整示例
 
-### 2.0
+### 2.0更新
 
-此demo已更新到Hyperledger Fabric v2.3.0版本
+1. 此demo已更新到Hyperledger Fabric v2.3.0版本。
+2. 使用[[test-network]](https://hyperledger-fabric.readthedocs.io/en/latest/test_network.html)搭建测试网络。
 
 ### 一、简介
 
@@ -21,7 +22,7 @@ layout: default
 <dependency>
 	<groupId>io.github.ecsoya</groupId>
 	<artifactId>fabric-explorer-spring-boot-starter</artifactId>
-	<version>1.0.5</version>
+	<version>${latest_version}</version>
 </dependency>
 ```
 
