@@ -4,10 +4,26 @@ layout: default
 
 ## Fabric 完整示例
 
-### 2.0更新
+### 2.0.x更新
 
-1. 此demo已更新到Hyperledger Fabric v2.3.0版本。
+1. 此demo已更新到Hyperledger Fabric v2.x版本。
 2. 使用[[test-network]](https://hyperledger-fabric.readthedocs.io/en/latest/test_network.html)搭建测试网络。
+
+第一步、 搭建基础网络
+
+`./network.sh up createChannel -c mychannel -s couchdb`
+
+第二步、部署通用链码（go版本） 
+
+`./network.sh deployCC -ccn mycc -ccv 1.0 -ccp ../src/chaincode/common -ccl go`
+
+或、部署通用链码（Java版本）
+
+`./network.sh deployCC -ccn commoncc -ccv 1.0 -ccp ../src/chaincode-java -ccl java`
+
+[Java链码地址](https://github.com/ecsoya/spring-fabric-gateway/tree/master/spring-fabric-gateway-chaincode)
+
+*在部署Java链码时，需要注意：1、如果是Maven开发的，需要将链码打包成jar包，具体的参见源码。2、将链码Jar包拷贝到链码安装目录下的/build/install/链码名称目录下，然后执行上述命令。具体操作请参考demo源码*
 
 ### 一、简介
 
@@ -28,7 +44,7 @@ layout: default
 </dependency>
 ```
 
-### 三、Fabric 网络搭建
+### 三、Fabric 网络搭建 v1.4.x
 
 1- 运行`first-network`文件夹中的`byfn.sh`脚本，此方法为官方的[fabric-samples](https://github.com/hyperledger/fabric-samples.git)中的示例，做了少量修改。
 
