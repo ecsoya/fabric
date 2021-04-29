@@ -18,6 +18,8 @@ layout: default
 
 创建一个Spring Boot Maven工程，并导入`fabric-explorer-spring-boot-starter`相关jar包。
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.ecsoya/spring-fabric-gateway/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/io.github.ecsoya/spring-fabric-gateway)
+
 ```xml
 <dependency>
 	<groupId>io.github.ecsoya</groupId>

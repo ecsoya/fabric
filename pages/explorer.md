@@ -20,6 +20,8 @@ Spring Fabric Explorer 是基于 [Spring Fabric Gateway](https://ecsoya.github.i
 
 第一步：加载`fabric-explorer-spring-boot-starter`：
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.ecsoya/spring-fabric-gateway/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/io.github.ecsoya/spring-fabric-gateway)
+
 ```xml
 <dependency>
 	<groupId>io.github.ecsoya</groupId>

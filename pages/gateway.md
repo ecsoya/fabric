@@ -16,6 +16,8 @@ Spring Fabric Gateway 是基于Hyperledger官方的[Hyperledger Fabric Gateway S
 
 第一步： 加载`fabric-gateway-spring-boot-starter`
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.ecsoya/spring-fabric-gateway/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/io.github.ecsoya/spring-fabric-gateway)
+
 ```
 <dependency>
 	<groupId>io.github.ecsoya</groupId>

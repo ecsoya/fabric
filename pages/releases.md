@@ -2,6 +2,15 @@
 
 # 版本更新
 
+### 2.0.2
+1. 新增了Java版的通用链码。
+2. 修复了Fabric浏览器国际化冲突问题。
+3. 移除了SLF实现类的依赖，可以更好的对接已有的SpringBoot项目。
+4. 将Springboot版本依赖降到2.2.0.RELEASE。
+
+### 2.0.1
+1. 修复部分BUG。
+
 ### 2.0.0
 1. 适配Hyperledger Fabric v2.x网络。
 
