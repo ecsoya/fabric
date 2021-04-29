@@ -7,7 +7,7 @@ layout: default
 ### 2.0.x更新
 
 1. 此demo已更新到Hyperledger Fabric v2.x版本。
-2. 使用[[test-network]](https://hyperledger-fabric.readthedocs.io/en/latest/test_network.html)搭建测试网络。
+2. 使用[官网](https://hyperledger-fabric.readthedocs.io)示例中的[[test-network]](https://hyperledger-fabric.readthedocs.io/en/latest/test_network.html)搭建测试网络。
 
 第一步、 搭建基础网络
 
