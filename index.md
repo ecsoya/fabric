@@ -19,7 +19,7 @@ Fabric网络的搭建有很多方式，许多云商都有自己的Fabric BAAS平
 
 这是我基于官方的Gateway项目，结合Spring MVC做出的一套框架，将Chaincode的函数调用，包装成了Spring的服务。
 
-1. 项目地址：[spring-fabric-gateway](https://github.com/ecsoya/spring-fabric-gateway)
+1. 项目地址：[Github](https://github.com/ecsoya/spring-fabric-gateway) [Gitee](https://gitee.com/ecsoya/spring-fabric-gateway)
 2. 详细文档：[Spring Fabric Gateway](pages/gateway.html)
 3. 最新版本：[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.ecsoya/spring-fabric-gateway/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/io.github.ecsoya/spring-fabric-gateway)
 4. Maven地址：
@@ -36,7 +36,7 @@ Fabric网络的搭建有很多方式，许多云商都有自己的Fabric BAAS平
 
 一个精简版的Fabric区块链浏览器。
 
-1. 项目地址：[spring-fabric-gateway](https://github.com/ecsoya/spring-fabric-gateway)
+1. 项目地址：[Github](https://github.com/ecsoya/spring-fabric-gateway) [Gitee](https://gitee.com/ecsoya/spring-fabric-gateway)
 2. 详细文档：[Spring Fabric Explorer](pages/explorer.html)
 3. Maven地址：
 
@@ -59,7 +59,7 @@ Fabric网络的搭建有很多方式，许多云商都有自己的Fabric BAAS平
 ### 六、完整示例
 
 1. [文档](https://ecsoya.github.io/fabric/pages/demo.html)
-2. [源码](https://github.com/ecsoya/fabric-demo)
+2. [源码](https://github.com/ecsoya/fabric-demo) [Gitee](https://gitee.com/ecsoya/fabric-demo)
 3. [在线演示](http://139.155.177.74:8081/)
 * * *
 

@@ -27,7 +27,7 @@ layout: default
 
 ### 一、简介
 
-1. 源码：[https://github.com/ecsoya/fabric-demo](https://github.com/ecsoya/fabric-demo)
+1. 源码：[https://github.com/ecsoya/fabric-demo](https://github.com/ecsoya/fabric-demo) [https://gitee.com/ecsoya/fabric-demo](https://gitee.com/ecsoya/fabric-demo)
 2. 功能：本地Fabric网络搭建、`fabric-gateway-spring-boot-starter`及`fabric-explorer-spring-boot-starter`使用。
 
 ### 二、Spring Boot 开始
