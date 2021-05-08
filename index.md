@@ -36,7 +36,7 @@ Fabric网络的搭建有很多方式，许多云商都有自己的Fabric BAAS平
 
 一个精简版的Fabric区块链浏览器。
 
-1. 项目地址：[Github](https://github.com/ecsoya/spring-fabric-gateway) [![Gitee](https://ecsoya.github.io/fabric/img/gitee.png)](https://gitee.com/ecsoya/spring-fabric-gateway)
+1. 项目地址：[Github](https://github.com/ecsoya/spring-fabric-gateway) [![Gitee](https://ecsoya.github.io/fabric/img/gitee.png =95x30)](https://gitee.com/ecsoya/spring-fabric-gateway)
 2. 详细文档：[Spring Fabric Explorer](pages/explorer.html)
 3. Maven地址：
 
